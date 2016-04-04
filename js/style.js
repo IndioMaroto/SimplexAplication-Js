@@ -21,7 +21,7 @@ function addSubjects()
   newSubject.innerHTML = "<div class='form-group'>" + subjectInput + subjectSecondInput + "</div>";
 
   // Adiciona a restrição ao corpo da página
-  document.getElementById("resr").appendChild(newSubject);
+  document.getElementById("subjects").appendChild(newSubject);
 
   // Incrementa a quantidade de subjects
   subjectCount++;
