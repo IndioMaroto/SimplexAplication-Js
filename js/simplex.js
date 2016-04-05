@@ -6,6 +6,9 @@ var STOPBYLOOP = MAX_LOOPS + 1;
 
 function simplex() {
   montamatrix();
+
+
+  while(CondicaoParada() && MaxVoltas())  
   calculo();
   console.log(matrix)
 }
@@ -125,4 +128,28 @@ function calculo()
     for(var column = 1; column < matrix[row].length; column++)
       matrix[row][column] = (matrix[sai][column] * fator) + matrix[row][column];
   }
+}
+
+function CondicaoParada()
+{
+  //pega a linha de z
+  var zrow = matrix.length - 1;
+
+  //colunas verificáveis
+  var columnAmount = matrix[zrow].length - 1;
+  
+  //verifica se há valor negativo
+  for(var i = 1; i < columnAmount; i++)
+    if(matrix[zrow][i] < 0)
+      return true; //ainda há valores negativos
+  
+    return false; //pára o simplex
+}
+
+function MaxVoltas()
+{
+  if(loops > MAX_LOOPS)
+    return false;
+
+  return true
 }
