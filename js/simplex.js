@@ -1,14 +1,16 @@
 
 var loops = 1;
-var MAX_LOOPS = 35;
+var MAX_LOOPS;
 var STOPBYLOOP = MAX_LOOPS + 1;
 
 
 function simplex() {
+  MAX_LOOPS = document.getElementById('interate').value;
+
   montamatrix();
 
 
-  while(CondicaoParada() && MaxVoltas())  
+  while(CondicaoParada() && MaxVoltas())
   calculo();
   console.log(matrix)
 }
@@ -18,7 +20,17 @@ function montamatrix()
   loops = 0;
 
   var z = document.getElementById('zFunction').value.split(';');
-
+  x = [];
+  var radios = document.getElementsByName("inputZtype");
+  if(radios[1].checked){
+    for(var j = 0; j < z.length; j++){
+      var i =(z[j]*(-1));
+      console.log(i);
+      x.push(i);
+    }
+    z = x;
+    console.log(z);
+  }
   var restriction = document.querySelectorAll('#subjects .form-group');
 
   matrix = [[]];
@@ -137,13 +149,13 @@ function CondicaoParada()
 
   //colunas verificáveis
   var columnAmount = matrix[zrow].length - 1;
-  
+
   //verifica se há valor negativo
   for(var i = 1; i < columnAmount; i++)
     if(matrix[zrow][i] < 0)
       return true; //ainda há valores negativos
-  
-    return false; //pára o simplex
+
+    return false; //parar o simplex
 }
 
 function MaxVoltas()

@@ -8,6 +8,21 @@
   <head>
   <body>
     <header><h1>Método Simplex</h1></header>
+    <h5>Quantidade maxima de interações </h5>
+       <input type="text" name="interate" id="interate" />
+
+       <div class="radio">
+             <label>
+               <input type="radio" id="ztypeMax" name="inputZtype" value="max" checked/>
+               Maximizar
+             </label>
+           </div>
+           <div class="radio">
+             <label>
+               <input type="radio" id="ztypeMin" name="inputZtype" value="min"/>
+               Minimizar
+             </label>
+
     <h5>Função z</h5>
     <input type="text" name="zFunction" id="zFunction" />
     <input type="button" class="simplex" value="simplex" onclick="simplex()" />
