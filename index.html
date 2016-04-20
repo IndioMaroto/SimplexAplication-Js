@@ -2,39 +2,95 @@
   <head>
     <title>Simplex</title>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
     <script src="js/simplex.js"></script>
     <script src="js/style.js"></script>
   <head>
   <body>
-    <header><h1>Método Simplex</h1></header>
-    <h5>Quantidade maxima de interações </h5>
-       <input type="text" name="interate" id="interate" />
-
-       <div class="radio">
-             <label>
-               <input type="radio" id="ztypeMax" name="inputZtype" value="max" checked/>
-               Maximizar
-             </label>
-           </div>
-           <div class="radio">
-             <label>
-               <input type="radio" id="ztypeMin" name="inputZtype" value="min"/>
-               Minimizar
-             </label>
-
-    <h5>Função z</h5>
-    <input type="text" name="zFunction" id="zFunction" />
-    <input type="button" class="simplex" value="simplex" onclick="simplex()" />
-    <div>
-      <div id ="restrictionVariable">
-        <h5>Variaveis de Restrição</h5>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper container">
+          <span class="brand-logo">Simplex</span>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="section ">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <h1>Simplex</h1>
+        </div>
       </div>
     </div>
-    <div id="subjects">
+    <div class="z-depth-3">
+      <div class="section grey lighten-4">
+        <div class="container">
+          <div class="row">
+            <div class="col s6">
+              <h4 class="header">Interações </h4>
+              <input type="text" name="interate" id="interate"class="col s8" placeholder="Quantidade maxima de Interações" /><br>
+            </div>
+            <div class="col s6">
+              <p>
+                <input type="radio" id="ztypeMax" name="inputZtype" value="max" checked/>
+                <label for="ztypeMax">Maximizar</label>
+              </p>
+              <p>
+                <input type="radio" id="ztypeMin" name="inputZtype" value="min"/>
+                <label for="ztypeMin">Minimizar</label>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section grey lighten-4">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <h5>Função z</h5>
+              <input type="text" name="zFunction" id="zFunction" placeholder="Digite a função Z separando por ';'"/>
+              <div id ="restrictionVariable">
+                <h5>Variaveis de Restrição</h5>
+              </div>
+              <div id="subjects"></div>
+              <a class="btn-floating btn-large waves-effect waves-light red" onclick="addSubjects();"><i class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section grey lighten-4">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 center-align">
+              <input type="button" class="simplex btn waves-effect waves-light " value="Gerar Resultados" onclick="simplex()" />
+          </div>
+        </div>
+      </div>
     </div>
-    <button type="button" class="btn btn-default btn-block btn-primary" onclick="addSubjects();">
-      Adicionar Restrições
-    </button>
+  </div>
+    <div class="section ">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <div id="tables">
+            </div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+      © 2016 Copyright Text - Feito por Taynara Sene
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

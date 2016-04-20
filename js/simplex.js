@@ -12,7 +12,7 @@ function simplex() {
 
   while(CondicaoParada() && MaxVoltas())
   calculo();
-  console.log(matrix)
+  printTable('Tabela');
 }
 
 function montamatrix()
@@ -164,4 +164,27 @@ function MaxVoltas()
     return false;
 
   return true
+}
+
+function printTable(title)
+{
+  var results = document.getElementById('tables');
+  var htmlTitle = '<h3 class="text-center">' + title + '</h3>';
+  var table = '<table class="highlight">';
+  var header = '<thead><tr>';
+  for(var col = 0; col < matrix[0].length; col++)
+    header += "<th>" + matrix[0][col] + "</th>";
+  table += header + '</tr></thead>';
+  var body = '<tbody>';
+  for(var row = 1; row < matrix.length; row++)
+  {
+    var tr = '<tr>';
+    for(var col = 0; col < matrix[row].length; col++)
+      tr += '<td>' +  matrix[row][col] + '</td>';
+
+    body += tr + '</tr>';
+  }
+
+  table += body + '</tbody>';
+  results.innerHTML += htmlTitle + table + '</table><hr />';
 }
