@@ -1,3 +1,4 @@
+var jq=jQuery.noConflict();
 var subjectCount = 0;
 
 function addSubjects()
@@ -26,3 +27,9 @@ function addSubjects()
   // Incrementa a quantidade de subjects
   subjectCount++;
 }
+
+(function($) {
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+})(jQuery);
