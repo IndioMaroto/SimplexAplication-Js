@@ -172,7 +172,7 @@ function printTable(title)
 {
   var results = document.getElementById('tables');
   var htmlTitle = '<h3 class="text-center">' + title + '</h3>';
-  var table = '<table class="highlight">';
+  var table = '<table class="striped">';
   var header = '<thead><tr>';
   for(var col = 0; col < matrix[0].length; col++)
     header += "<th>" + matrix[0][col] + "</th>";
