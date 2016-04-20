@@ -11,8 +11,10 @@ function simplex() {
 
 
   while(CondicaoParada() && MaxVoltas())
-  calculo();
+    calculo();
+  solucao();
   printTable('Tabela');
+  Sensibilidade()
 }
 
 function montamatrix()
@@ -187,4 +189,67 @@ function printTable(title)
 
   table += body + '</tbody>';
   results.innerHTML += htmlTitle + table + '</table><hr />';
+}
+
+function solucao()
+{
+  var outputDiv = document.getElementById('post-optimization');
+  var header = '<h4 class="text-center">Questões pós otimização</h4>';
+  var paragrafos = '';
+  for(var i = 1; i < (matrix[0].length - 1); i++)
+  {
+    var solucao = (matrix[0][i][0] == 'x' ? 'Produção de ' : 'Folga da restrição ') + matrix[0][i];
+    var val = 0;
+    for(var rowIndex = 1; rowIndex < (matrix.length - 1); rowIndex++)
+      if(matrix[0][i] == matrix[rowIndex][0])
+        val = matrix[rowIndex][matrix[0].length - 1];
+    paragrafos += '<p>' + solucao + ' = ' + val + '</p>';
+  }
+  outputDiv.innerHTML = header + paragrafos;
+};
+
+function Sensibilidade()
+{
+
+  var outputDiv = document.getElementById('sensibility-analysis');
+  var title = '<h3 class="text-center">Análise de Sensibilidade</h3>';
+  var paragraphs = '';
+  var subjects = document.querySelectorAll('#subjects .form-group');
+  var subjectIndex = (matrix[0].length - subjects.length) - 1;
+  for(var index = 0;index < subjects.length;index++,subjectIndex++)
+  {
+    var restricao = 'f'+(index+1);
+    var original = Number(subjects[index].querySelectorAll('input')[1].value);
+    var minDelta = Number.POSITIVE_INFINITY;
+    var maxDelta = Number.NEGATIVE_INFINITY;
+
+    var shadowPrice = matrix[matrix.length - 1][subjectIndex];
+
+
+    if(shadowPrice != 0) {
+    for(var rowIndex = 1; rowIndex < (matrix.length - 1); rowIndex++)
+    {
+      var functionRow = Number(matrix[rowIndex][subjectIndex]);
+      var bRow = Number(matrix[rowIndex][matrix[0].length - 1]);
+
+      if(functionRow == 0)
+        continue;
+
+      var delta = (-1 * bRow) / functionRow;
+
+      if(delta > maxDelta)
+        maxDelta = delta;
+
+      if(delta < minDelta)
+        minDelta = delta;
+    }
+    minDelta += original;
+    maxDelta += original;
+    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Menor:' + minDelta + '<br />Maior:' + maxDelta + '</p>';
+  } else {
+    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Alterações são insignificantes</p>';
+  }
+}
+
+  outputDiv.innerHTML = title + paragraphs;
 }
