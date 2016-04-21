@@ -14,9 +14,6 @@
       <nav>
         <div class="nav-wrapper container">
           <span class="brand-logo">Simplex</span>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
-          </ul>
         </div>
       </nav>
     </div>
@@ -28,8 +25,8 @@
         <div class="container" style="pading-top:20px;">
           <div class="row">
             <div class="col s6">
-              <h4 class="header">Interações </h4>
-              <input type="text" name="interate" id="interate"class="col s8" placeholder="Quantidade maxima de Interações" /><br>
+              <h4 class="header">Iterações </h4>
+              <input type="number" name="interate" class="tooltipped" id="interate"class="col s8" placeholder="Quantidade maxima de Interações" data-delay="50" data-tooltip="Quantidade maxima de Interações" /><br>
             </div>
             <div class="col s6">
               <p>
@@ -50,7 +47,7 @@
           <div class="row">
             <div class="col s12">
               <h5>Função z</h5>
-              <input type="text" name="zFunction" id="zFunction" placeholder="EXEMPLO: Para digitar: '3x1 + 5x2', digite: '3;5'"/>
+              <input type="text" name="zFunction" class="tooltipped" id="zFunction" placeholder="EXEMPLO: Para digitar: '3x1 + 5x2', digite: '3;5'"  data-delay="50" data-tooltip="DIGITE: '3;5', AO INVÉS DE: '3X1 + 5X2'"/>
               <div id ="restrictionVariable">
                 <h5>Variaveis de Restrição</h5>
               </div>
@@ -74,17 +71,11 @@
     <div class="section ">
       <div class="container">
         <div class="row">
-          <div class="col s6">
-            <div id="tables">
-            </div>
-        </div>
-        <div class="col s6">
-          <div id="post-optimization">
-          </div>
+            <div id="tables"></div>
+            <div id="post-optimization"></div>
         </div>
       </div>
     </div>
-  </div>
   <div class="section ">
     <div class="container">
       <div class="row">
@@ -97,7 +88,7 @@
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
-      © 2016 Copyright Text - Feito por Taynara Sene e Cinthia Silman
+      © 2016 Copyright Text - Feito por Taynara Sene
       </div>
     </div>
   </footer>
