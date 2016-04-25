@@ -28,6 +28,7 @@ function montamatrix()
 
   x = [];
   var radios = document.getElementsByName("inputZtype");
+  
   if(radios[1].checked){
     for(var j = 0; j < z.length; j++){
       var i =(z[j]*(-1));

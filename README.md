@@ -17,14 +17,26 @@ Passo a passo:
 
 -Digite a quantidade máxima de iterações do algoritmo.
 
--Informar se maximizará ou minimizará o resultado.
+-Informe se maximizará ou minimizará o resultado.
 
 -Digite a função Z, que será a função objetivo.  
 
 -Digite todas as restrições para a função.
 
-- Ao chegar na condição de parada, mostrará o resultado ideal para cada tipo de variável.
+O algoritmo criará as variáveis de folga para transformar as desigualdades das restrições em igualdades. Criará o quadro do SIMPLEX.
 
--Apresentará a Análise de Sensibilidade que serve para investigar o efeito sobre a solução ótima fornecida pelo método Simplex.
+Quem entrará na base?
+ - O menor coeficiente que pode ser encontrado na linha da função objetivo.
+
+Quem sairá da base?
+ - O algoritmo dividirá os elementos da última coluna pelos correspondentes elementos positivos da coluna da variável que irá entrar na base. O menor quociente será a variável que sairá.
+
+Transformação da Matriz: operações para tornar a coluna do pivô em um vetor identidade.
+
+A condição de parada ocorrerá quando toda a linha Z for maior ou igual a 0.
+
+Ao chegar na condição de parada, mostrará o resultado ideal para cada tipo de variável.
+
+Apresentará a Análise de Sensibilidade que serve para investigar o efeito sobre a solução ótima fornecida pelo método Simplex.
 
 
