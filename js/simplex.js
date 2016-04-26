@@ -4,6 +4,7 @@ var MAX_LOOPS;
 var STOPBYLOOP = MAX_LOOPS + 1;
 
 
+
 function simplex() {
   MAX_LOOPS = document.getElementById('interate').value;
 
@@ -20,13 +21,30 @@ function simplex() {
 function montamatrix()
 {
   loops = 0;
-  z = new Array(2);
-  var z1= document.getElementById('zFunction');
-  var z2 = document.getElementById('zFunction2');
-  z[0] = z1.value;
-  z[1] = z2.value;
 
-  x = [];
+  //var z1= document.getElementById('zFunction');
+  //var z2 = document.getElementById('zFunction2');
+  //z[0] = z1.value;
+  //z[1] = z2.value;
+
+var z = [[]];
+var x = [[]];
+
+
+  var objetivo = document.querySelectorAll('#object.form-group');
+  console.log(z);
+    console.log(objetivo);
+
+  for(var i = 0; i <= objetivo.length; i++)
+    z[i].push( objetivo[i]);
+  console.log(z);
+
+    
+
+
+
+
+
   var radios = document.getElementsByName("inputZtype");
   
   if(radios[1].checked){
@@ -47,7 +65,7 @@ function montamatrix()
     //INVERTER O RESULTADO FINAL Z
     //METAS: ENCONTRAR O RESULTADO FINAL DE Z
     //DESCOBRIR COMO O VETOR VIRA UM RSULTADO SO
-    z = x ;
+    z = x;
     console.log(z);
   }
   var restriction = document.querySelectorAll('#subjects .form-group');
