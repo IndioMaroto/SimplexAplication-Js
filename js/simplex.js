@@ -208,6 +208,7 @@ function solucao()
   outputDiv.innerHTML = header + paragrafos;
 };
 
+
 function Sensibilidade()
 {
 
@@ -245,11 +246,17 @@ function Sensibilidade()
     }
     minDelta += original;
     maxDelta += original;
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Menor:' + minDelta + '<br />Maior:' + maxDelta + '</p>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>' + minDelta + '</td><td>' + maxDelta + '</td></tr>';
   } else {
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Alterações são insignificantes</p>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>Alterações são insignificantes</td></td>';
   }
 }
+outputDiv.innerHTML =  title + "<table class='highlight'>"+
+                               "<thead><tr><th>Sensibilidade</th>"+
+                                           "<th>Original</th>"+
+                                           "<th>Preço Sombra</th>"+
+                                           "<th>Menor</th>"+
+                                           "<th>Maior</th>"+
+                                      "</tr></thead>"+paragraphs+"</tables>";
 
-  outputDiv.innerHTML = title + paragraphs;
 }
