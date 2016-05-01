@@ -4,8 +4,9 @@ var MAX_LOOPS;
 var STOPBYLOOP = MAX_LOOPS + 1;
 
 
-
 function simplex() {
+
+  clear();
   MAX_LOOPS = document.getElementById('interate').value;
 
   montamatrix();
@@ -22,49 +23,15 @@ function montamatrix()
 {
   loops = 0;
 
-  //var z1= document.getElementById('zFunction');
-  //var z2 = document.getElementById('zFunction2');
-  //z[0] = z1.value;
-  //z[1] = z2.value;
-
-var z = [[]];
-var x = [[]];
-
-
-  var objetivo = document.querySelectorAll('#object.form-group');
-  console.log(z);
-    console.log(objetivo);
-
-  for(var i = 0; i <= objetivo.length; i++)
-    z[i].push( objetivo[i]);
-  console.log(z);
-
-    
-
-
-
-
-
+  var z = document.getElementById('zFunction').value.split(';');
+  x = [];
   var radios = document.getElementsByName("inputZtype");
-  
   if(radios[1].checked){
     for(var j = 0; j < z.length; j++){
       var i =(z[j]*(-1));
       console.log(i);
       x.push(i);
     }
-    z = x;
-    console.log(z);
-  }
-  else if(radios[0].checked){
-    for(var j = 0; j<z.length;j++){
-      var i = z[j];
-      console.log(i);
-      x.push(i); 
-    }
-    //INVERTER O RESULTADO FINAL Z
-    //METAS: ENCONTRAR O RESULTADO FINAL DE Z
-    //DESCOBRIR COMO O VETOR VIRA UM RSULTADO SO
     z = x;
     console.log(z);
   }
@@ -243,6 +210,7 @@ function solucao()
   outputDiv.innerHTML = header + paragrafos;
 };
 
+
 function Sensibilidade()
 {
 
@@ -280,11 +248,17 @@ function Sensibilidade()
     }
     minDelta += original;
     maxDelta += original;
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Menor:' + minDelta + '<br />Maior:' + maxDelta + '</p>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>' + minDelta + '</td><td>' + maxDelta + '</td></tr>';
   } else {
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Alterações são insignificantes</p>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>Alterações são insignificantes</td></td>';
   }
 }
+outputDiv.innerHTML =  title + "<table class='highlight'>"+
+                               "<thead><tr><th>Sensibilidade</th>"+
+                                           "<th>Original</th>"+
+                                           "<th>Preço Sombra</th>"+
+                                           "<th>Menor</th>"+
+                                           "<th>Maior</th>"+
+                                      "</tr></thead>"+paragraphs+"</tables>";
 
-  outputDiv.innerHTML = title + paragraphs;
 }
