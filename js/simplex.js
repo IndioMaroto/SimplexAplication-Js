@@ -5,6 +5,8 @@ var STOPBYLOOP = MAX_LOOPS + 1;
 
 
 function simplex() {
+
+  clear();
   MAX_LOOPS = document.getElementById('interate').value;
 
   montamatrix();
@@ -245,9 +247,9 @@ function Sensibilidade()
     }
     minDelta += original;
     maxDelta += original;
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Menor:' + minDelta + '<br />Maior:' + maxDelta + '</p>';
+    paragraphs += '<table><thead><tr><td></td><td>' + restricao + '</td></tr></thead></tbody><tr><td>Original:</td><td>' +original + '</td></tr><tr><td>Preço Sombra:</td><td>' + shadowPrice + '</td></tr><tr><td>Menor:</td><td>' + minDelta + '</td></tr><tr><td>Maior:</td><td>' + maxDelta + '</td></tr></tbody></table>';
   } else {
-    paragraphs += '<p>' + restricao + '<br />Original:' +original + '<br />Preço Sombra:' + shadowPrice + '<br />Alterações são insignificantes</p>';
+    paragraphs += '<table><thead><tr><td></td><td>' + restricao + '</td></tr></thead></tbody><tr><td>Original:</td><td>' +original +  '</td></tr><tr><td>Preço Sombra:</td><td>' + shadowPrice + '</td></tr><tr><td>Alterações são insignificantes</td></tr></tbody></table>';
   }
 }
 
