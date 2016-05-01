@@ -7,21 +7,17 @@ var STOPBYLOOP = MAX_LOOPS + 1;
 function simplex() {
 
   clear();
+
   MAX_LOOPS = document.getElementById('interate').value;
-
   montamatrix();
-
-
   while(CondicaoParada() && MaxVoltas())
     calculo();
   solucao();
-  printTable('Tabela');
   Sensibilidade()
 }
 
 function montamatrix()
 {
-  loops = 0;
 
   var z = document.getElementById('zFunction').value.split(';');
   x = [];
@@ -82,6 +78,8 @@ function montamatrix()
   for(var j = 0; j < restriction.length; j++)
     matrix[matrix.length - 1][countCol++] = 0;
   matrix[matrix.length - 1][countCol] = 0;
+
+  printTable('Tabela Inicial');
 }
 
 function calculo()
@@ -144,6 +142,7 @@ function calculo()
     for(var column = 1; column < matrix[row].length; column++)
       matrix[row][column] = (matrix[sai][column] * fator) + matrix[row][column];
   }
+      printTable('Iteração ' + loops++);
 }
 
 function CondicaoParada()
