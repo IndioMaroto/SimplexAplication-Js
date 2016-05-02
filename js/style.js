@@ -4,17 +4,30 @@ var subjectCount = 0;
 function addSubjects()
 {
   var newSubject = document.createElement('div');
+  newSubject.id = "restricao"+subjectCount;
   var subjectInput = "<div class='input-group'>";
-  subjectInput += "<div><strong>F" + (subjectCount + 1) + "<strong></div>";
-  subjectInput += "<input type='text' class='tooltipped col s8 ' placeholder='Para digitar: 3x1 + 5x2, digite: 3;5' id='subject"+ subjectCount + "'/>";
+  subjectInput += "<span class='col s1'><strong>F" + (subjectCount + 1) + "<strong></span>";
+  subjectInput += "<input type='text' class='tooltipped col s5 ' placeholder='Para digitar: 3x1 + 5x2, digite: 3;5' id='subject"+ subjectCount + "'/>";
   var subjectSecondInput = "<span class='col s1 sinal valign-wrapper'><strong>&le;<strong></span>";
-  subjectSecondInput += '<input type="text" class="form-control col s3" id="subjectTyped' + subjectCount + '"/>';
+  subjectSecondInput += '<input type="text" class="form-control col s2" id="subjectTyped' + subjectCount + '"/>';
   subjectSecondInput += "</div>";
-  newSubject.innerHTML = "<div class='form-group col s12'>" + subjectInput + subjectSecondInput + "</div>";
+  var del = "<a class='btn-floating waves-effect waves-light  teal accent-4 delete"+ subjectCount +"' onclick='removeSubjects("+ newSubject.id+");''><i class='material-icons'>delete</i></a></div>"
+  var add = "<a class='btn-floating waves-effect waves-light red' onclick='addSubjects();'><i class='material-icons'>add</i></a>"
+  var butons = "<div class='col s3 '>"+ add + del +"</div>";
+  newSubject.innerHTML = "<div class='form-group col s12'>" + subjectInput + subjectSecondInput + butons+"</div>";
   document.getElementById("subjects").appendChild(newSubject);
   subjectCount++;
+  if(subjectCount > 0){
+    jQuery('.init').hide();
+  }
+  jQuery('.delete0').addClass("disabled");
 }
 
+function removeSubjects(restricao)
+{
+  restricao.remove();
+  subjectCount--;
+}
 (function($) {
   $(document).ready(function(){
     $('.parallax').parallax();
