@@ -7,21 +7,17 @@ var STOPBYLOOP = MAX_LOOPS + 1;
 function simplex() {
 
   clear();
+
   MAX_LOOPS = document.getElementById('interate').value;
-
   montamatrix();
-
-
   while(CondicaoParada() && MaxVoltas())
     calculo();
   solucao();
-  printTable('Tabela');
   Sensibilidade()
 }
 
 function montamatrix()
 {
-  loops = 0;
 
   var z = document.getElementById('zFunction').value.split(';');
   x = [];
@@ -82,6 +78,8 @@ function montamatrix()
   for(var j = 0; j < restriction.length; j++)
     matrix[matrix.length - 1][countCol++] = 0;
   matrix[matrix.length - 1][countCol] = 0;
+
+  printTable('Tabela Inicial');
 }
 
 function calculo()
@@ -144,6 +142,7 @@ function calculo()
     for(var column = 1; column < matrix[row].length; column++)
       matrix[row][column] = (matrix[sai][column] * fator) + matrix[row][column];
   }
+      printTable('Iteração ' + loops++);
 }
 
 function CondicaoParada()
@@ -210,6 +209,7 @@ function solucao()
   outputDiv.innerHTML = header + paragrafos;
 };
 
+
 function Sensibilidade()
 {
 
@@ -247,11 +247,17 @@ function Sensibilidade()
     }
     minDelta += original;
     maxDelta += original;
-    paragraphs += '<table><thead><tr><td></td><td>' + restricao + '</td></tr></thead></tbody><tr><td>Original:</td><td>' +original + '</td></tr><tr><td>Preço Sombra:</td><td>' + shadowPrice + '</td></tr><tr><td>Menor:</td><td>' + minDelta + '</td></tr><tr><td>Maior:</td><td>' + maxDelta + '</td></tr></tbody></table>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>' + minDelta + '</td><td>' + maxDelta + '</td></tr>';
   } else {
-    paragraphs += '<table><thead><tr><td></td><td>' + restricao + '</td></tr></thead></tbody><tr><td>Original:</td><td>' +original +  '</td></tr><tr><td>Preço Sombra:</td><td>' + shadowPrice + '</td></tr><tr><td>Alterações são insignificantes</td></tr></tbody></table>';
+    paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>Alterações são insignificantes</td></td>';
   }
 }
+outputDiv.innerHTML =  title + "<table class='highlight'>"+
+                               "<thead><tr><th>Sensibilidade</th>"+
+                                           "<th>Original</th>"+
+                                           "<th>Preço Sombra</th>"+
+                                           "<th>Menor</th>"+
+                                           "<th>Maior</th>"+
+                                      "</tr></thead>"+paragraphs+"</tables>";
 
-  outputDiv.innerHTML = title + paragraphs;
 }
