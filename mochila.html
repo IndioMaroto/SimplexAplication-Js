@@ -10,6 +10,18 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/functions.js"></script>
     <script src="js/knapsack.js"></script>
+    <script>
+    (function($) {
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+      });
+
+    })(jQuery);
+    </script>
   </head>
   <body>
     <div class="navbar-fixed ">
@@ -20,7 +32,7 @@
       </nav>
     </div>
       <div class="parallax-container col s6 m12 l12" style = "height:400px;">
-       <div class="parallax"><img class="responsive-img" src="parallax1.jpg" style="width:100%"></div>
+        <div class="parallax"><img class="responsive-img" src="./parallax1.jpg" style="width:100%"></div>
      </div>
     <div class="container">
       <div class="row">
