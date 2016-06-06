@@ -42,74 +42,23 @@
       </div>
       <!--  -->
       <div class="row">
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l4">
           <div class="form-group">
             <label>Peso do item</label>
             <input type="number" class="form-control" id="txtWeight" value="0" />
           </div>
         </div>
-        <div class="col s12 m12 l6">
-          <div class="form-group">
-            <label>Valor do item</label>
-            <input type="number" class="tooltipped col s5" id="txtValue" value="0" />
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <div class="row">
-          <div class="form-group">
-            <label>Peso do item</label>
-            <input type="number" class="form-control" id="txtWeight" value="0" />
-          </div>
-        </div>
-        <div class="col-md-3">
+        <div class="col s12 m12 l4">
           <div class="form-group">
             <label>Valor do item</label>
             <input type="number" class="form-control" id="txtValue" value="0" />
           </div>
         </div>
-        <div class="col-md-3">
-          <div class="form-group">
-            <label>Adicionar item</label>
-            <button id="btnAddItem" type="button"
-              class="btn btn-primary btn-block" onclick="addItem();">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <table id="tbItens" class="table table-striped">
-            <thead>
-              <tr>
-                <th style="width: 60px;"></th>
-                <th>Peso</th>
-                <th>Valor</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tdbody>
-          </table>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Tabela de solução</h2>
-          <table id="tblSolution" class="table table-bordered">
-            <thead></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Solução do problema</h2>
-          <p>Os itens que devem ser levados são, no formato peso(valor), os itens:</p>
-          <div id="finalSolution"></div>
-        </div>
+        <div class="col s12 m12 l4">
+         <div class="form-group">
+           <a class="btn-floating btn-large waves-effect waves-light red init" onclick="addTableItem();"><i class="material-icons">add</i></a>
+         </div>
+       </div>
       </div>
     </div>
   </body>
