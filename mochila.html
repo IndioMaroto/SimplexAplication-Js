@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Trabalho</title>
+    <meta charset="utf-8">
+    <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/functions.js"></script>
+    <script src="js/knapsack.js"></script>
+  </head>
+  <body>
+    <div class="navbar-fixed ">
+      <nav>
+        <div class="nav-wrapper container col s12 m12 ">
+          <span class="brand-logo">Mochila</span>
+        </div>
+      </nav>
+    </div>
+      <div class="parallax-container col s6 m12 l12" style = "height:400px;">
+       <div class="parallax"><img class="responsive-img" src="parallax1.jpg" style="width:100%"></div>
+     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="form-group">
+            <label>Capacidade da mochila</label>
+            <input type="number" class="form-control" id="txtCapacity" placeholder="0" />
+          </div>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="form-group">
+            <label>Definir capacidade</label>
+            <button id="btnAddItem" type="button"
+              class="btn btn-primary btn-block" onclick="setCapacity();">
+              <i class="material-icons">work</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="row">
+        <div class="col s12 m12 l6">
+          <div class="form-group">
+            <label>Peso do item</label>
+            <input type="number" class="form-control" id="txtWeight" value="0" />
+          </div>
+        </div>
+        <div class="col s12 m12 l6">
+          <div class="form-group">
+            <label>Valor do item</label>
+            <input type="number" class="tooltipped col s5" id="txtValue" value="0" />
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="row">
+          <div class="form-group">
+            <label>Peso do item</label>
+            <input type="number" class="form-control" id="txtWeight" value="0" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Valor do item</label>
+            <input type="number" class="form-control" id="txtValue" value="0" />
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Adicionar item</label>
+            <button id="btnAddItem" type="button"
+              class="btn btn-primary btn-block" onclick="addItem();">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table id="tbItens" class="table table-striped">
+            <thead>
+              <tr>
+                <th style="width: 60px;"></th>
+                <th>Peso</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tdbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Tabela de solução</h2>
+          <table id="tblSolution" class="table table-bordered">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Solução do problema</h2>
+          <p>Os itens que devem ser levados são, no formato peso(valor), os itens:</p>
+          <div id="finalSolution"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
