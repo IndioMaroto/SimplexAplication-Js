@@ -22,6 +22,7 @@ O Simplex permite que se encontre valores ideais em situações em que diversos 
 
 - Algoritmo Simplex para problemas de maximização.
 - Algoritmo Simplex para problemas de minimização.
+- É exibido o passo a passo das tabelas geradas pelo método Simplex
 - Tabela de Sensibilidade.
 
 Entradas personalizadas para:
@@ -52,6 +53,12 @@ Datas | Eventos
 23/04/16    | Estruturação da Função Objetivo
 23/04/16    | Arrumando a função Minimizar
 29/04/16    | Readme modificado
+01/05/16    | Limpar tela
+01/05/16    | Alteração no campo de restrições
+01/05/16    | Tabela de Sensibilidade
+01/05/16    | Criando o passo a passo
+01/05/16    | Ajustes nos inputs das restrições
+
 
 ##Compatibilidade
 
@@ -74,11 +81,13 @@ Servidor Web    | https://github.io/
 ##Atividades Realizadas no Período
 
 Código | Título | Tarefa | Situação | Observação 
---------- | ------
+--------- | ------ | -------| -------| -------
 1 | Maximizar | Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=” 
 2 | Minimizar | Montar a Tabela Simplex, e possibilitar o usuário a minimizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=”  
 3 | Adição de restrições | Possibilitar o usuário a adicionar inputs para maiores números de restrições. | Concluído | 
-4  | Tabela de sensibilidade | Demonstrar ao usuário a tabela de sensibilidade. |Concluído|
+4 | Remoção de restrições | Possibilitar o usuário a remover inputs para menores números de restrições. | Concluído |
+5 | Demonstrar passo a passo | Demonstrar ao usuário as alterações na tabela causada pelas iterações do método simplex. | Concluído|
+6  | Tabela de sensibilidade | Demonstrar ao usuário a tabela de sensibilidade. |Concluído|
 
 
 
