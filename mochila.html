@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/functions.js"></script>
-    <script src="js/knapsack.js"></script>
+    <script src="js/mochila.js"></script>
     <script>
     (function($) {
       $(document).ready(function(){
@@ -35,14 +35,14 @@
        <div class="parallax"><img class="responsive-img" src="parallax1.jpg" style="width:100%"></div>
      </div>
     <div class="container">
-      <div class="row">
-        <div class="col s12 m12 l6">
+      <div class="row" style="padding-top:50px;">
+        <div class="col s12 m12 l8">
           <div class="form-group">
             <label>Capacidade da mochila</label>
             <input type="number" class="form-control" id="txtCapacidade" placeholder="0" />
           </div>
         </div>
-        <div class="col s12 m12 l6">
+        <div class="col s12 m12 l4">
           <div class="form-group">
             <label>Definir capacidade</label>
             <button id="btnAddItem" type="button"
@@ -52,23 +52,22 @@
           </div>
         </div>
       </div>
-      <!--  -->
       <div class="row">
         <div class="col s12 m12 l4">
           <div class="form-group">
             <label>Peso do item</label>
-            <input type="number" class="form-control" id="txtWeight" value="0" />
+            <input type="number" class="form-control" id="txtPeso" value="0" />
           </div>
         </div>
         <div class="col s12 m12 l4">
           <div class="form-group">
             <label>Valor do item</label>
-            <input type="number" class="form-control" id="txtValue" value="0" />
+            <input type="number" class="form-control" id="txtValor" value="0" />
           </div>
         </div>
         <div class="col s12 m12 l4">
          <div class="form-group">
-           <a class="btn-floating btn-large waves-effect waves-light red init" onclick="addTableItem();"><i class="material-icons">add</i></a>
+           <a class="btn-floating waves-effect waves-light red" onclick="addItem();"><i class="material-icons">add</i></a>
          </div>
        </div>
       </div>
@@ -87,21 +86,21 @@
           </table>
         </div>
       </div>
-      <hr />
+
       <div class="row">
         <div class="s12 m12 l12">
-          <h2>Tabela de solução</h2>
-          <table id="tblSolution" class="table table-bordered">
+          <h5>Tabela de solução</h5>
+          <table id="tblSolution" class="highlight">
             <thead></thead>
             <tbody></tbody>
           </table>
         </div>
       </div>
-      <hr />
+
       <div class="row">
         <div class="col-md-12">
-          <h2>Solução do problema</h2>
-          <p>Os itens que devem ser levados são, no formato peso(valor), os itens:</p>
+          <h5>Solução do problema</h5>
+          <p>O algoritmo selecionou estes itens como qualificados:</p>
           <div id="finalSolution"></div>
         </div>
       </div>
