@@ -55,8 +55,8 @@ O algoritmo da mochila consiste em preencher a mochila com objetos diferentes de
 
 ###Mochila
 
-- Não é possível utilizar itens com pesos iguais
-- Somente valores inteiros são permitidos
+- Não utilizar itens com pesos iguais
+- Serão permitidos somente valores inteiros
 
 
 ##Datas Importantes
@@ -129,12 +129,10 @@ Código | Título | Tarefa | Situação | Observação
 
 Código | Título | Tarefa | Situação | Observação 
 --------- | ------ | -------| -------| -------
-1 | Tabela de solução | Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=” 
-2 | Minimizar | Montar a Tabela Simplex, e possibilitar o usuário a minimizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=”  
-3 | Adição de restrições | Possibilitar o usuário a adicionar inputs para maiores números de restrições. | Concluído | 
-4 | Remoção de restrições | Possibilitar o usuário a remover inputs para menores números de restrições. | Concluído |
-5 | Demonstrar passo a passo | Demonstrar ao usuário as alterações na tabela causada pelas iterações do método simplex. | Concluído|
-6  | Tabela de sensibilidade | Demonstrar ao usuário a tabela de sensibilidade. |Concluído|
+1 | Tabela de solução | Demonstrar ao usuário as etapas do algortimo | Concluído |  
+2 | Solução do problema | Mostrar ao usuário os itens selecionados pelo algoritmo como qualificados | Concluído | 
+ 
+
 
 
 
