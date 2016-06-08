@@ -1,6 +1,6 @@
 # SimplexAplication-Js
 
-Repositório para a implementação do algoritmo Simplex.
+Repositório para a implementação do algoritmo Simplex e Mochila.
 
 Cinthia Silman RA: 544590
 Taynara Sene RA: 538515
@@ -9,6 +9,8 @@ Projeto de Pesquisa Operacional
 5º Semestre BSI UNIVEM
 
 O Simplex permite que se encontre valores ideais em situações em que diversos aspectos precisam ser respeitados. Diante de um problema, são estabelecidas inequações que representam restrições para as variáveis. A partir daí, testa-se possibilidades de maneira a otimizar, isto é, maximizar ou minimizar o resultado da forma mais rápida possível.
+
+O algoritmo da mochila consiste em preencher a mochila com objetos diferentes de pesos e valores. O objetivo é que preencha a mochila com o maior valor possível, não ultrapassando o peso máximo.
 
 
 ## Ferramentas
@@ -20,23 +22,46 @@ O Simplex permite que se encontre valores ideais em situações em que diversos 
 
 ## Nota de realease a ser publicado
 
+###Simplex
+
 - Algoritmo Simplex para problemas de maximização.
 - Algoritmo Simplex para problemas de minimização.
 - É exibido o passo a passo das tabelas geradas pelo método Simplex
 - Tabela de Sensibilidade.
 
-Entradas personalizadas para:
+###Mochila
+
+- Apreentação da solução, dos itens a serem considerados e a tabela de cálculo.
+
+
+##Entradas personalizadas para:
+
+###Simplex
 
 - Limite máximo de iterações
 - Tipo de Simplex (MAX ou MIN)
 - Quantidade de variáveis e restrições
 
+###Mochila
+- Capacidade da mochila
+- Peso e valor dos itens
+
 ##Limitações
+
+###Simplex
 
 - Em cada variável da função objetivo e das restrições deve conter apenas o número, sem a adição do 'x', separando os números por ';' e caso tenha alguma variável nula, é necessário inserir o 0.
 
 
+###Mochila
+
+- Não utilizar itens com pesos iguais
+- Serão permitidos somente valores inteiros
+
+
 ##Datas Importantes
+
+###Simplex
 
 Datas | Eventos
 --------- | ------
@@ -59,6 +84,15 @@ Datas | Eventos
 01/05/16    | Criando o passo a passo
 01/05/16    | Ajustes nos inputs das restrições
 
+###Mochila
+
+Datas | Eventos
+--------- | ------
+05/06/16     | Início do Planejamento
+06/06/16    | Inserindo inputs
+06/06/16    | Inserindo o paralax
+07/06/16  | Finalização do projeto da mochila
+08/06/16  | Atualizando o Read Me
 
 ##Compatibilidade
 
@@ -80,6 +114,8 @@ Servidor Web    | https://github.io/
 
 ##Atividades Realizadas no Período
 
+###Simplex
+
 Código | Título | Tarefa | Situação | Observação 
 --------- | ------ | -------| -------| -------
 1 | Maximizar | Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=” 
@@ -88,6 +124,15 @@ Código | Título | Tarefa | Situação | Observação
 4 | Remoção de restrições | Possibilitar o usuário a remover inputs para menores números de restrições. | Concluído |
 5 | Demonstrar passo a passo | Demonstrar ao usuário as alterações na tabela causada pelas iterações do método simplex. | Concluído|
 6  | Tabela de sensibilidade | Demonstrar ao usuário a tabela de sensibilidade. |Concluído|
+
+###Mochila
+
+Código | Título | Tarefa | Situação | Observação 
+--------- | ------ | -------| -------| -------
+1 | Tabela de solução | Demonstrar ao usuário as etapas do algortimo | Concluído |  
+2 | Solução do problema | Mostrar ao usuário os itens selecionados pelo algoritmo como qualificados | Concluído | 
+ 
+
 
 
 
