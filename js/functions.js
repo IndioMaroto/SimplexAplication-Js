@@ -9,7 +9,6 @@ var capacidade = 0;
 // Define a capacidade da mochila
 function setCapacity()
 {
-
   var txtcapacidade = document.getElementById('txtCapacidade');
   capacidade = Number(txtcapacidade.value);
   // calcula a solução
