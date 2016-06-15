@@ -1,4 +1,3 @@
-
 var loops = 1;
 var MAX_LOOPS;
 var STOPBYLOOP = MAX_LOOPS + 1;
@@ -216,8 +215,12 @@ function Sensibilidade()
   var outputDiv = document.getElementById('sensibility-analysis');
   var title = '<h3 class="text-center">Análise de Sensibilidade</h3>';
   var paragraphs = '';
+  var paragraphsX = '';
   var subjects = document.querySelectorAll('#subjects .form-group');
+
+  //Calcula Sensibilidade das variaveis de folga
   var subjectIndex = (matrix[0].length - subjects.length) - 1;
+  console.log(subjectIndex);
   for(var index = 0;index < subjects.length;index++,subjectIndex++)
   {
     var restricao = 'f'+(index+1);
@@ -226,7 +229,6 @@ function Sensibilidade()
     var maxDelta = Number.NEGATIVE_INFINITY;
 
     var shadowPrice = matrix[matrix.length - 1][subjectIndex];
-
 
     if(shadowPrice != 0) {
     for(var rowIndex = 1; rowIndex < (matrix.length - 1); rowIndex++)
@@ -252,12 +254,49 @@ function Sensibilidade()
     paragraphs += '<tr><td>' + restricao + '</td><td>' +original + '</td><td>' + shadowPrice + '</td><td>Alterações são insignificantes</td></td>';
   }
 }
+//Calcula Sensibilidade das variaveis de Decisão
+  var z = document.getElementById('zFunction').value.split(';');
+  var decisionIndex = z.length;
+  console.log(decisionIndex);
+  jQuery.each( z, function( index, value ) {
+    var decision = 'x'+(index+1);
+    var originalX = value;
+    var minDeltaX = Number.POSITIVE_INFINITY;
+    var maxDeltaX = Number.NEGATIVE_INFINITY;
+    var shadowPriceX = matrix[matrix.length - 1][decisionIndex];
+    if(shadowPriceX != 0) {
+      for(var i = 1; i < (matrix.length - 1); i++)
+      {
+        var functionRow = Number(matrix[i][decisionIndex]);
+        var b = Number(matrix[i][matrix[0].length - 1]);
+
+        if(functionRow == 0)
+          continue;
+
+        var deltaX = (-1 * b) / functionRow;
+
+        if(deltaX > maxDeltaX)
+          maxDeltaX = deltaX;
+
+        if(deltaX < minDeltaX)
+          minDeltaX = deltaX;
+      }
+      minDeltaX += originalX;
+      maxDeltaX += originalX;
+      paragraphsX += '<tr><td>' + decision + '</td><td>' +originalX + '</td><td>' + shadowPriceX + '</td><td>' + minDeltaX + '</td><td>' + maxDeltaX + '</td></tr>';
+    } else {
+      paragraphsX += '<tr><td>' + decision + '</td><td>' +originalX + '</td><td>' + shadowPriceX + '</td><td>Alterações são insignificantes</td></td>';
+    }
+    console.log(paragraphsX);
+  });
+
+
 outputDiv.innerHTML =  title + "<table class='highlight'>"+
                                "<thead><tr><th>Sensibilidade</th>"+
                                            "<th>Original</th>"+
                                            "<th>Preço Sombra</th>"+
                                            "<th>Menor</th>"+
                                            "<th>Maior</th>"+
-                                      "</tr></thead>"+paragraphs+"</tables>";
+                                      "</tr></thead>"+paragraphs+""+paragraphsX+"</tables>";
 
 }
