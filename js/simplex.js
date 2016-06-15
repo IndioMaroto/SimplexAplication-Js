@@ -11,8 +11,8 @@ function simplex() {
   montamatrix();
   while(CondicaoParada() && MaxVoltas())
     calculo();
-  solucao();
   Sensibilidade()
+  solucao();
 }
 
 function montamatrix()
@@ -30,7 +30,7 @@ function montamatrix()
     z = x;
     console.log(z);
   }
-  var restriction = document.querySelectorAll('#subjects .form-group');
+  var restriction = document.querySelectorAll('#subjects .restrictionV');
 
   matrix = [[]];
   matrix[0][0] = 'Linha';
@@ -172,7 +172,7 @@ function printTable(title)
 {
   var results = document.getElementById('tables');
   var htmlTitle = '<h3 class="text-center">' + title + '</h3>';
-  var table = '<table class="striped">';
+  var table = '<table class="ui teal table">';
   var header = '<thead><tr>';
   for(var col = 0; col < matrix[0].length; col++)
     header += "<th>" + matrix[0][col] + "</th>";
@@ -203,9 +203,9 @@ function solucao()
     for(var rowIndex = 1; rowIndex < (matrix.length - 1); rowIndex++)
       if(matrix[0][i] == matrix[rowIndex][0])
         val = matrix[rowIndex][matrix[0].length - 1];
-    paragrafos += '<p>' + solucao + ' = ' + val + '</p>';
+    paragrafos += '<div class="item">' + solucao + ' = ' + val + '</div>';
   }
-  outputDiv.innerHTML = header + paragrafos;
+  outputDiv.innerHTML = "<div class='ui list'>"+ header + paragrafos+ "</div>";
 };
 
 
@@ -216,7 +216,7 @@ function Sensibilidade()
   var title = '<h3 class="text-center">Análise de Sensibilidade</h3>';
   var paragraphs = '';
   var paragraphsX = '';
-  var subjects = document.querySelectorAll('#subjects .form-group');
+  var subjects = document.querySelectorAll('#subjects .restrictionV');
 
   //Calcula Sensibilidade das variaveis de folga
   var subjectIndex = (matrix[0].length - subjects.length) - 1;
@@ -263,11 +263,11 @@ function Sensibilidade()
     var originalX = value;
     var minDeltaX = Number.POSITIVE_INFINITY;
     var maxDeltaX = Number.NEGATIVE_INFINITY;
-    var shadowPriceX = matrix[matrix.length - 1][decisionIndex];
+    var shadowPriceX = matrix[matrix.length - 1][index + 1];
     if(shadowPriceX != 0) {
       for(var i = 1; i < (matrix.length - 1); i++)
       {
-        var functionRow = Number(matrix[i][decisionIndex]);
+        var functionRow = Number(matrix[i][index + 1]);
         var b = Number(matrix[i][matrix[0].length - 1]);
 
         if(functionRow == 0)
@@ -287,16 +287,15 @@ function Sensibilidade()
     } else {
       paragraphsX += '<tr><td>' + decision + '</td><td>' +originalX + '</td><td>' + shadowPriceX + '</td><td>Alterações são insignificantes</td></td>';
     }
-    console.log(paragraphsX);
   });
 
 
-outputDiv.innerHTML =  title + "<table class='highlight'>"+
+outputDiv.innerHTML =  title + "<table class='ui teal table'>"+
                                "<thead><tr><th>Sensibilidade</th>"+
                                            "<th>Original</th>"+
                                            "<th>Preço Sombra</th>"+
                                            "<th>Menor</th>"+
                                            "<th>Maior</th>"+
-                                      "</tr></thead>"+paragraphs+""+paragraphsX+"</tables>";
+                                      "</tr></thead>"+paragraphs+""+ paragraphsX+"</tables>";
 
 }

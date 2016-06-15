@@ -5,16 +5,14 @@ function addSubjects()
 {
   var newSubject = document.createElement('div');
   newSubject.id = "restricao"+subjectCount;
-  var subjectInput = "<div class='input-group'>";
-  subjectInput += "<span class='col s1'><strong>F" + (subjectCount + 1) + "<strong></span>";
-  subjectInput += "<input type='text' class='tooltipped col s5 ' placeholder='Para digitar: 3x1 + 5x2, digite: 3;5' id='subject"+ subjectCount + "'/>";
-  var subjectSecondInput = "<span class='col s1 sinal valign-wrapper'><strong>&le;<strong></span>";
-  subjectSecondInput += '<input type="text" class="form-control col s2" id="subjectTyped' + subjectCount + '"/>';
-  subjectSecondInput += "</div>";
-  var del = "<a class='btn-floating waves-effect waves-light  teal accent-4 delete"+ subjectCount +"' onclick='removeSubjects("+ newSubject.id+");''><i class='material-icons'>delete</i></a></div>"
-  var add = "<a class='btn-floating waves-effect waves-light red' onclick='addSubjects();'><i class='material-icons'>add</i></a>"
-  var butons = "<div class='col s3 '>"+ add + del +"</div>";
-  newSubject.innerHTML = "<div class='form-group col s12'>" + subjectInput + subjectSecondInput + butons+"</div>";
+  var subjectInput = "<div class='restrictionV fields'><div class='six wide field'>";
+  subjectInput += "<input type='text' placeholder='F"+ (subjectCount + 1)+"' id='subject"+ subjectCount + "'/></div>";
+  var subjectSecondInput = "<div class='field'><label class='sinal'>&le;</label></div>";
+   subjectSecondInput += '<div class="six wide field"><input type="text" id="subjectTyped' + subjectCount + '"/></div>';
+  var del = "<a class='delete"+ subjectCount +"'onclick='removeSubjects("+ newSubject.id+");'><i class='circular red trash icon'></i></a>"
+  var add = "<a onclick='addSubjects();' ><i class='circular red add circle icon'></i></a>"
+  var butons = "<div class='two wide field'><div class='one fields'><div class='field'>"+ add +"</div><div class='field'>"+ del +"</div>";
+  newSubject.innerHTML = ""+ subjectInput + subjectSecondInput + butons+"</div></div></div>";
   document.getElementById("subjects").appendChild(newSubject);
   subjectCount++;
   if(subjectCount > 0){
@@ -28,16 +26,6 @@ function removeSubjects(restricao)
   restricao.remove();
   subjectCount--;
 }
-(function($) {
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-
-  $(document).ready(function(){
-    $('.tooltipped').tooltip({delay: 50});
-  });
-
-})(jQuery);
 
 function clear(){
   jQuery("#tables").empty();
