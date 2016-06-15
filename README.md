@@ -83,6 +83,11 @@ Datas | Eventos
 01/05/16    | Tabela de Sensibilidade
 01/05/16    | Criando o passo a passo
 01/05/16    | Ajustes nos inputs das restrições
+15/06/16    | Arrumando link do simplex
+15/06/16    | Ajustando tabelas simplex
+15/06/16    | Análise de sensibilidade
+15/06/16    | Atualizando README
+
 
 ###Mochila
 
@@ -93,6 +98,8 @@ Datas | Eventos
 06/06/16    | Inserindo o paralax
 07/06/16  | Finalização do projeto da mochila
 08/06/16  | Atualizando o Read Me
+14/06/16  | Refatoração do layout da Mochila e index
+15/06/16   | Atualizando README
 
 ##Compatibilidade
 
@@ -109,29 +116,29 @@ Front-End     | HTML, Javascript, JQuery
 Back-End    | Javascript
 Framework WEB    | Materialize
 Editor de Texto  | Atom e Sublime
-Design pattern  | 
+Design pattern  |
 Servidor Web    | https://github.io/
 
 ##Atividades Realizadas no Período
 
 ###Simplex
 
-Código | Título | Tarefa | Situação | Observação 
+Código | Título | Tarefa | Situação | Observação
 --------- | ------ | -------| -------| -------
-1 | Maximizar | Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=” 
-2 | Minimizar | Montar a Tabela Simplex, e possibilitar o usuário a minimizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=”  
-3 | Adição de restrições | Possibilitar o usuário a adicionar inputs para maiores números de restrições. | Concluído | 
+1 | Maximizar | Montar a Tabela Simplex, e possibilitar o usuário a maximizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=”
+2 | Minimizar | Montar a Tabela Simplex, e possibilitar o usuário a minimizar modelos de simplex com sistemas lineares. | Concluído | Apenas restrições de “<=”
+3 | Adição de restrições | Possibilitar o usuário a adicionar inputs para maiores números de restrições. | Concluído |
 4 | Remoção de restrições | Possibilitar o usuário a remover inputs para menores números de restrições. | Concluído |
 5 | Demonstrar passo a passo | Demonstrar ao usuário as alterações na tabela causada pelas iterações do método simplex. | Concluído|
 6  | Tabela de sensibilidade | Demonstrar ao usuário a tabela de sensibilidade. |Concluído|
 
 ###Mochila
 
-Código | Título | Tarefa | Situação | Observação 
+Código | Título | Tarefa | Situação | Observação
 --------- | ------ | -------| -------| -------
-1 | Tabela de solução | Demonstrar ao usuário as etapas do algortimo | Concluído |  
-2 | Solução do problema | Mostrar ao usuário os itens selecionados pelo algoritmo como qualificados | Concluído | 
- 
+1 | Tabela de solução | Demonstrar ao usuário as etapas do algortimo | Concluído |
+2 | Solução do problema | Mostrar ao usuário os itens selecionados pelo algoritmo como qualificados | Concluído |
+
 
 
 
