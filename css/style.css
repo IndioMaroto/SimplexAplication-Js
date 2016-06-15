@@ -2,3 +2,11 @@
   font-size: 30px;
   padding-left: 10%;
 }
+
+table{
+  display: none;
+}
+
+.solucao{
+  display: none;
+}
