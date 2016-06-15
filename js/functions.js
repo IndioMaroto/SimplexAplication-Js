@@ -22,7 +22,6 @@ function errorMessage(mensagem){
   var close = $("<i></i>").attr("class","close icon");
   var header = $("<div>"+mensagem+"</div>").attr("class","header");
   message.append(close, header);
-  $("#error").append(message);
 
   //Fecha errorMessage
   $('.message .close')
