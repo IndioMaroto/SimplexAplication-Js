@@ -1,4 +1,3 @@
-
 var loops = 1;
 var MAX_LOOPS;
 var STOPBYLOOP = MAX_LOOPS + 1;
