@@ -9,14 +9,35 @@ var capacidade = 0;
 // Define a capacidade da mochila
 function setCapacity()
 {
+
   var txtcapacidade = document.getElementById('txtCapacidade');
   capacidade = Number(txtcapacidade.value);
   // calcula a solução
   mochila();
 }
+//Exibe mensagem de Erro
+function errorMessage(mensagem){
+  //exibe mensagem
+  var message = $("<div></div>").attr("class", "ui negative message");
+  var close = $("<i></i>").attr("class","close icon");
+  var header = $("<div>"+mensagem+"</div>").attr("class","header");
+  message.append(close, header);
+  $("#error").append(message);
+
+  //Fecha errorMessage
+  $('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
+}
 
 // Adiciona um item na tabela
 function addItem() {
+  setCapacity()
 
   var txtPeso = document.getElementById('txtPeso');
   var txtValor  = document.getElementById('txtValor');
@@ -26,13 +47,13 @@ function addItem() {
 
   if(peso <= 0)
   {
-    alert('O peso deve ser um valor maior que zero!');
+    errorMessage("O peso deve ser um valor maior que zero!");
     return;
   }
 
   if(valor < 0)
   {
-    alert('O valor deve ser positivo!')
+    errorMessage("O valor deve ser positivo!");
     return;
   }
 
@@ -51,15 +72,13 @@ function addItem() {
   txtPeso.value = 0;
   txtValor.value = 0;
 
-
   printTable();
 }
   // Imprime a tabela
 function printTable()
 {
-
+  $("table").show();
   var table = document.getElementById('tbItens');
-
   table.lastElementChild.innerHTML = '';
 
   for(var index = 0; index < itens.length; index++)
@@ -71,7 +90,7 @@ function printTable()
     var weightCell = row.insertCell(1);
     var valueCell = row.insertCell(2);
 
-    btnCell.innerHTML = '<button type="button" class=btn-floating waves-effect waves-light  teal accent-4 delete" onclick="delTableItem(' + index + ')"><i class="material-icons">delete</i></a></button>';
+    btnCell.innerHTML = '<a onclick="delTableItem(' + index + ')"><i class="circular red trash icon"></i></a>';
     weightCell.innerHTML = itens[index][I_WEIGHT];
     valueCell.innerHTML = itens[index][I_VALUE];
   }

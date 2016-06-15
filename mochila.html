@@ -8,22 +8,23 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="ui secondary pointing menu">
-      <a class="active item">
-        Mochila
+    <div class="ui inverted menu">
+      <a class="item" href="index.html"><i class="red travel icon"></i> P.O  </a>
+      <a class="item" href="simplex.html">
+        Simplex
       </a>
     </div>
-    <div class="ui segment">
       <div class="ui container">
       <div class="ui two column centered grid">
         <div class="column">
+          <div id="error"></div>
           <h2 class="ui header">
-            <img src="imagens/icons/plugin.png">
-            <div class="content ui inverted blue header">
+            <i class="huge red travel icon"></i>
+            <div class="content ui teal header">
               Algoritimo da Mochila
             </div>
           </h2>
-        <form class="ui form">
+        <div class="ui form">
           <div class="field">
             <label>Capacidade da mochila</label>
             <input type="number" id="txtCapacidade" placeholder="Capacidade da mochila"/>
@@ -44,11 +45,11 @@
              </button>
            </div>
          </div>
-        </form>
+       </div>
         <table id="tbItens" class="ui teal table">
           <thead>
             <tr>
-              <th style="width: 60px;"><th>
+              <th>Ação</th>
               <th>Peso</th>
               <th>Valor</th>
             </tr>
@@ -61,10 +62,10 @@
           <thead></thead>
           <tbody></tbody>
         </table>
-
-        <h5>Solução do problema</h5>
-        <p>O algoritmo selecionou estes itens como qualificados:</p>
-        <div id="finalSolution"></div>
+        <div class="solucao">
+          <h5>Solução do problema</h5>
+          <p>O algoritmo selecionou estes itens como qualificados:</p>
+          <div id="finalSolution"></div>
         </div>
       </div>
     </div>

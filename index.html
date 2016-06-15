@@ -1,40 +1,45 @@
+<!doctype html>
 <html>
   <head>
     <title>Trabalho</title>
     <meta charset="utf-8">
     <script   src="https://code.jquery.com/jquery-2.2.3.js"   integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link href="css/style.css" rel="stylesheet">
-    <script src="js/simplex.js"></script>
-    <script src="js/style.js"></script>
-  <head>
+  </head>
   <body>
-    <div class="navbar-fixed ">
-      <nav>
-        <div class="nav-wrapper container col s12 m12 ">
-          <span class="brand-logo">Pesquisa Operacional</span>
-        </div>
-      </nav>
+    <div class="ui inverted menu">
+      <a class="item" href="index.html"><i class="red travel icon"></i> P.O  </a>
+      <a class="item" href="simplex.html">
+        Simplex
+      </a>
+      <a class="item" href="mochila.html">
+        Mochila
+      </a>
     </div>
-      <div class="parallax-container col s6 m12 l12" style = "height:400px;">
-       <div class="parallax"><img class="responsive-img" src="./parallax1.jpg" style="width:100%"></div>
-     </div>
-    <div class="z-depth-3">
-      <div class="section grey lighten-4">
-        <div class="container">
-          <div class="row">
-            <div class="col s12 m12 l12 center-align">
-              <a href="simplex.html" class="waves-effect waves-light btn">Simplex</a>
-              <a href="mochila.html" class="waves-effect waves-light btn">Mochila</a>
+    <div class="ui container" style="padding-top:10%">
+      <div class="ui two column centered grid">
+        <div class="column">
+          <div class="ui two column middle aligned very relaxed stackable grid">
+            <div class="center aligned column">
+              <div class="ui big labeled icon button">
+                <i class="signup icon"></i>
+                Simplex
+              </div>
+            </div>
+            <div class="ui vertical divider">
+              Or
+            </div>
+            <div class="center aligned column">
+              <a href="mochila.html" class="ui big teal labeled icon button">
+                <i class="red travel icon"></i>
+                Mochila
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="parallax-container col s6 m12 l12" style = "height:400px;">
-   <div class="parallax"><img class="responsive-img" src="./parallax1.jpg" style="width:100%"></div>
- </div>
+  <script src="semantic/dist/semantic.min.js"></script>
   </body>
 </html>
